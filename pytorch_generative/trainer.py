@@ -144,6 +144,8 @@ class Trainer:
         for i, batch in enumerate(self._train_loader):
           batch = batch if isinstance(batch, (tuple, list)) else (batch, None)
           x, y = batch
+          x = x.to(self._device)
+          y = y.to(self._device)
           self._examples_processed += x.shape[0]
           lrs = {
               f'group_{i}': param['lr'] 
