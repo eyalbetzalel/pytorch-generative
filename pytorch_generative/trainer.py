@@ -23,7 +23,7 @@ class Trainer:
                  lr_scheduler=None,
                  log_dir='/tmp/runs',
                  save_checkpoint_epochs=1,
-                 device=torch.device('cpu')):
+                 device=torch.device('gpu')):
         """Initializes a new Trainer instance.
         
         Args:
