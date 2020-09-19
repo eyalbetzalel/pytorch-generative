@@ -137,9 +137,9 @@ class Trainer:
     def interleaved_train_and_eval(self, n_epochs):
       """Trains and evaluates (after each epoch) for n_epochs."""
 
-      for _ in range(n_epochs):
+      for i in range(n_epochs):
         start_time = time.time()
-
+        print("This is epcoch number: " + str(i) + "\n")    
         # Train.
         for i, batch in enumerate(self._train_loader):
           batch = batch if isinstance(batch, (tuple, list)) else (batch, None)
