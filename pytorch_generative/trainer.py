@@ -102,6 +102,9 @@ class Trainer:
 
       Subclasses can override this method to define custom training loops.
       """
+      x = x.to(self._device)
+      if y is not None:
+        y = y.to(self._device)
       preds = self._model(x)
       loss = self._loss_fn(x, y, preds)
       return loss
