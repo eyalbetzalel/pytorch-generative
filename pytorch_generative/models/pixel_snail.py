@@ -181,7 +181,7 @@ class PixelSNAIL(base.AutoregressiveModel):
     skip = x
     for block in self._pixel_snail_blocks:
       x = block(skip, input_img)
-      x = x.to(self._device)
+      
       skip += x
     out = self._output(skip).view(n, self._out_dim, c, h, w)
     return self._probs_fn(out)
