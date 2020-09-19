@@ -35,7 +35,7 @@ test_loader = data.DataLoader(
     
     #####################################################################################################################################
     
-    class MaskedConv2d(nn.Conv2d):
+class MaskedConv2d(nn.Conv2d):
   """A Conv2d layer masked to respect the autoregressive property.
 
   Autoregressive masking means that the computation of the current pixel only
